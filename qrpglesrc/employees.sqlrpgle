@@ -134,8 +134,8 @@
 
                 if (sqlstate = '00000');
                   @XID   = Employee.EMPNO;
-                  @XNAME = %TrimR(Employee.FIRSTNME) + ' '
-                         + %TrimR(Employee.LASTNAME);
+                  @XNAME = %TrimR(Employee.LASTNAME) + ', '
+                         + %TrimR(Employee.FIRSTNME);
                   @XJOB  = Employee.JOB;
 
                   rrn += 1;
