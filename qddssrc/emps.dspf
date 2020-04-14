@@ -6,6 +6,7 @@
      A            @1SEL          1A  B  7  8
      A            @XID           6A  O  7 12
      A            @XNAME        30A  O  7 20
+     A            @XJOB          8A  O  7 52
      A* COLOR                  HELLO
      A          R SFLCTL                    SFLCTL(SFLDTA)
      A                                      SFLPAG(0014)
@@ -25,12 +26,12 @@
      A                                  6 20'Name'
      A                                      DSPATR(UL)
      A                                      COLOR(WHT)
+     A                                  6 52'Job'
+     A                                      DSPATR(UL)
+     A                                      COLOR(WHT)
      A          R FOOTER_FMT
      A                                      OVERLAY
      A                                  3 06'F12=Back'
      A                                      COLOR(BLU)
      A                                  2 35'Employees'
      A                                      DSPATR(UL)
-     A                                      COLOR(WHT)
-     A                                  4 06'5=View'
-     A                                      COLOR(BLU)

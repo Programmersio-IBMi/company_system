@@ -116,7 +116,7 @@
             ClearSubfile();
 
             EXEC SQL DECLARE empCur CURSOR FOR
-              SELECT EMPNO, FIRSTNME, LASTNAME
+              SELECT EMPNO, FIRSTNME, LASTNAME, JOB
               FROM EMPLOYEE
               WHERE WORKDEPT = :DEPTNO;
 
@@ -127,12 +127,16 @@
               dou (sqlstate <> '00000');
                 EXEC SQL
                   FETCH NEXT FROM empCur
-                  INTO :Employee.EMPNO, :Employee.FIRSTNME, :Employee.LASTNAME;
+                  INTO :Employee.EMPNO, 
+                       :Employee.FIRSTNME, 
+                       :Employee.LASTNAME,
+                       :Employee.JOB;
 
                 if (sqlstate = '00000');
                   @XID   = Employee.EMPNO;
                   @XNAME = %TrimR(Employee.FIRSTNME) + ' '
                          + %TrimR(Employee.LASTNAME);
+                  @XJOB  = Employee.JOB;
 
                   rrn += 1;
                   Write SFLDTA;
